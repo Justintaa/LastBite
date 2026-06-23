@@ -127,17 +127,6 @@ This project uses environment variables for configuration. Do not commit a real 
 | `STRIPE_PUBLISHABLE_KEY` | Stripe publishable key                     |
 | `STRIPE_SECRET_KEY`      | Stripe secret key                          |
 
-## Screenshots
-
-Add screenshots here after running the project locally.
-
-```md
-![Landing Page](screenshots/landing-page.png)
-![Customer Dashboard](screenshots/customer-dashboard.png)
-![Business Dashboard](screenshots/business-dashboard.png)
-![Product Page](screenshots/product-page.png)
-![Cart Page](screenshots/cart-page.png)
-```
 
 ## What I Worked On
 
