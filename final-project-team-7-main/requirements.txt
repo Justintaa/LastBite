@@ -5,3 +5,4 @@ gunicorn
 requests>=2.31.0
 stripe
 djangorestframework
+whitenoise>=6.6

@@ -20,7 +20,14 @@ else:
     raise SystemExit("Database never became ready.")
 PY
 
-# Run migrations & launch dev server
+# Run migrations & collect static files
 python manage.py migrate --noinput
-python manage.py collectstatic --noinput || true
-exec python manage.py runserver 0.0.0.0:8000
+python manage.py collectstatic --noinput
+
+# Use gunicorn when DJANGO_ENV=production (set this on Render), otherwise
+# fall back to the dev server for local docker compose.
+if [ "$DJANGO_ENV" = "production" ]; then
+    exec gunicorn config.wsgi:application --bind 0.0.0.0:${PORT:-8000}
+else
+    exec python manage.py runserver 0.0.0.0:8000
+fi
